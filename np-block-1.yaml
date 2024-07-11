@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-all-ingress-to-webserver-a
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: webserver-a
+  policyTypes:
+  - Ingress
